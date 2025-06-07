@@ -5,7 +5,10 @@ import pandas as pd
 from datetime import datetime
 import smtplib
 from email.message import EmailMessage
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 browser = webdriver.Chrome()
 
@@ -45,10 +48,9 @@ df = pd.DataFrame({
 df.to_csv('yamaha.csv',index=False)
 
 
-# --- 設定部分 ---
-GMAIL_ADDRESS = 'aitsu0815@gmail.com'
-APP_PASSWORD = 'fncaqjhllgunmglf'
-TO_ADDRESS = 'antsu0815@icloud.com'
+GMAIL_ADDRESS = os.getenv('GMAIL_ADDRESS')
+APP_PASSWORD = os.getenv('APP_PASSWORD')
+TO_ADDRESS = os.getenv('TO_ADDRESS')
 
 body = "【本日のヤマハ発動機ニュース】\n\n"
 if len(df) == 0:
