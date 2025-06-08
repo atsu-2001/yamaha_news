@@ -27,3 +27,27 @@ PythonとSelenium、BeautifulSoup、pandas、smtplibを活用した実用的な�
 ## 🖼️ 実行結果
 メール通知イメージ
 ![result.png](images/result.png)
+
+---
+
+## 🛠️ 環境設定
+
+1. `.env` ファイルを作成し、以下のキーを設定します。
+
+   ```
+   GMAIL_ADDRESS=<送信に使用するGmailアドレス>
+   APP_PASSWORD=<Gmailのアプリパスワード>
+   TO_ADDRESS=<送信先アドレス>
+   ```
+
+2. 依存パッケージをインストールします。
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. `main.py` を実行してメール通知を確認します。
+
+   ```bash
+   python main.py
+   ```
